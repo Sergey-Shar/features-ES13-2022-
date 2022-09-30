@@ -1,6 +1,6 @@
 # features ECMAScript-2022 (ES13)
 
-!(banner)[https://plainenglish.io/assets/post-content/latest-es13-javascript-features.png]
+![banner](https://plainenglish.io/assets/post-content/latest-es13-javascript-features.png)
 
 ## 1) The new method Array.prototype.at()
 
