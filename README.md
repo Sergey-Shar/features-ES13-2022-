@@ -7,10 +7,9 @@
 The at() method takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
 
 The following "indexable" types have method .at():
-
--string
--Array
--All Typed Array classes: Uint8Array etc.
+- string
+- Array
+- All Typed Array classes: Uint8Array etc.
 
 
 ```javascript
