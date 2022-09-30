@@ -1,4 +1,4 @@
-# features ECMAScript-2022 (ES13)
+# Features ECMAScript-2022 (ES13)
 
 ![banner](https://plainenglish.io/assets/post-content/latest-es13-javascript-features.png)
 
@@ -58,4 +58,62 @@ static #privateStaticMethod(){
 return 'Hello ECMAScript 2022';
  };
 }
- 
+```
+
+## 4) Regexp Match Indices 
+
+This upgrade will allow us to use the d character to specify that we want to get the indices (starting and ending) of the matches of our RegExp. Previously this was not possible. You could only obtain indexing data in the process of string-matching operation.
+
+```javascript
+const fruits = "Fruits: apple, banana, orange";
+const regex = /(banana)/g;
+
+const matchObj = regex.exec(fruits);
+
+console.log(matchObj);
+// [
+//   'banana',
+//   'banana',
+//   index: 15,
+//   input: 'Fruits: apple, banana, orange',
+//   groups: undefined
+// ]
+
+const fruits = "Fruits: apple, banana, orange";
+const regex = /(banana)/dg;
+
+const matchObj = regex.exec(fruits);
+
+console.log(matchObj);
+// [
+//   'banana',
+//   'banana',
+//   index: 15,
+//   indices:[
+//      [15, 21],
+//      [15, 21]
+//   ]
+//   input: 'Fruits: apple, banana, orange',
+//   groups: undefined
+// ]
+```
+## 5) Await operator at the top-level
+
+```javascript
+// Loading modules dynamically
+const strings = await import(`./example.mjs`);
+
+// Using a fallback if module loading fails
+let jQuery;
+try {
+  jQuery = await import("https://cdn-a.com/jQuery");
+} catch {
+  jQuery = await import("https://cdn-b.com/jQuery");
+}
+
+// Using whichever resource loads fastest
+const resource = await Promise.any([
+  fetch("http://example1.com"),
+  fetch("http://example2.com"),
+]);
+ ```
