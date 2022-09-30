@@ -6,6 +6,12 @@
 
 The at() method takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
 
+The following "indexable" types have method .at():
+
+string
+Array
+All Typed Array classes: Uint8Array etc.
+
 
 ```javascript
 
@@ -28,7 +34,6 @@ str.at(2); // m
 ## 2) The new property Error.prototype.cause
 
 The cause property indicates the specific original cause of an error.
-
 It is used when catching and re-throwing an error with a more-specific or useful error message in order to still have access to the original error.
 
 ```javascript
