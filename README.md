@@ -1,5 +1,7 @@
 # features ECMAScript-2022 (ES13)
 
+
+## 1) The new method at() 
 ```javascript
 
 const arr = [1,2,3,5,8,12];
@@ -18,6 +20,12 @@ str.at(0); // s
 str.at(2); // m
 ```
 
+## 2) The new property Error.prototype.cause
+
+The cause property indicates the specific original cause of an error.
+
+It is used when catching and re-throwing an error with a more-specific or useful error message in order to still have access to the original error.
+
 ```javascript
 
 try{
@@ -26,6 +34,8 @@ conectToDataBase();
 throw new Error('Connecting to database failed.', {cause:error});
 }
 ```
+
+## 3) The new property Error.prototype.cause
 
 ```javascript
 
