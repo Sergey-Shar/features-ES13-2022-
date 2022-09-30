@@ -22,3 +22,12 @@ const str = 'some string'
 str.at(0) // s
 str.at(2) // m
 ```
+
+```javascript
+
+try{
+conectToDataBase()
+}catch(error){
+throw new Error('Connecting to database failed.', {cause:error})
+}
+```
