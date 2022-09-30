@@ -43,13 +43,18 @@ class Foo {
 #privateField = 42;
 
 #privateMethod(){
+
 return 'hello ES13';
+
 };
 
 static #PRIVATE_STATIC_FIELD = 22;
 
 static #privateStaticMethod (){
+
 return 'Hello ECMAScript 2022';
+
  };
+ 
 }
  
