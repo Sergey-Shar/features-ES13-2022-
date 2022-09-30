@@ -1,1 +1,1 @@
-# features ES13 (ECMAScript/2022)
+# features ECMAScript-2022 (ES13)
