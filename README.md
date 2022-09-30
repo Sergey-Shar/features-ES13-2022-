@@ -154,3 +154,29 @@ Object.hasOwn(object2.__proto__, "name"); // true
 const object3 = Object.create(null);
 Object.hasOwn(object3, "name"); // false
 ```
+
+## 7) Array find from last
+In JavaScript, we already have an Array.prototype.find and Array.prototype.findIndex. We know to find from last may have better performance (The target element on the tail of the array, could append with push or concat in a queue or stack, eg: recently matched time point in a timeline). If we care about the order of the elements (May have a duplicate item in the array, eg: last odd in the list of numbers), a better way to use new methods Array.prototype.findLast and Array.prototype.findLastIndex
+
+Instead of writing for find from last:
+```javascript
+const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];
+
+// find
+[...array].reverse().find((n) => n.value % 2 === 1); // { value: 3 }
+
+// findIndex
+array.length - 1 - [...array].reverse().findIndex((n) => n.value % 2 === 1); // 2
+array.length - 1 - [...array].reverse().findIndex((n) => n.value === 9); // should be -1, but 4
+```
+We would be able to write:
+```javascript
+const array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }];
+
+// find
+array.findLast((n) => n.value % 2 === 1); // { value: 3 }
+
+// findIndex
+array.findLastIndex((n) => n.value % 2 === 1); // 2
+array.findLastIndex((n) => n.value === 9); // -1
+```
