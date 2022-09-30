@@ -14,7 +14,7 @@ arr.at(-1) // 12
 
 const arr2 = [[1,2,3,], [4,5,6],[7,8,9]]
 
-arr2[arr2.length -1] [arr2[arr2.length -1].length -1]
+arr2[arr2.length -1][arr2[arr2.length -1].length -1]
 
 arr2.at(-1).at(-1)
 ```
