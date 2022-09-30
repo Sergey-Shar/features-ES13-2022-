@@ -26,8 +26,12 @@ str.at(2) // m
 ```javascript
 
 try{
+
 conectToDataBase()
+
 }catch(error){
+
 throw new Error('Connecting to database failed.', {cause:error})
+
 }
 ```
