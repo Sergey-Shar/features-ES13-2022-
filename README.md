@@ -1,7 +1,11 @@
 # features ECMAScript-2022 (ES13)
 
 
-## 1) The new method at() 
+## 1) The new method Array.prototype.at()
+
+The at() method takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
+
+
 ```javascript
 
 const arr = [1,2,3,5,8,12];
@@ -35,7 +39,7 @@ throw new Error('Connecting to database failed.', {cause:error});
 }
 ```
 
-## 3) The new property Error.prototype.cause
+## 3) Private class features
 
 ```javascript
 
