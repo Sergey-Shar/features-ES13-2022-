@@ -40,7 +40,7 @@ throw new Error('Connecting to database failed.', {cause:error});
 }
 ```
 
-## 3) Private class features
+## 3) Private class features #
 
 ```javascript
 
