@@ -121,3 +121,36 @@ const resource = await Promise.any([
   fetch("http://example2.com"),
 ]);
  ```
+ 
+ ## 6) Accessible Object.prototype.hasOwnProperty()
+ In JavaScript, we already have an Object.prototype.hasOwnProperty but, as the MDN documentation also suggests, 
+ it's best to not use hasOwnProperty   outside the prototype itself as it is not a protected property,
+ meaning that an object could have its property called hasOwnProperty that has nothing to do with Object.prototype.hasOwnProperty
+ 
+ ```javascript
+ const person = {
+  name: "Roman",
+  hasOwnProperty: () => {
+    return false;
+  },
+};
+
+person.hasOwnProperty("name"); // false
+```
+Another problem Object.create(null) will create an object that does not inherit from Object.prototype, making those methods inaccessible.
+```javascript
+Object.create(null).hasOwnProperty("name");
+// Uncaught TypeError: Object.create(...).hasOwnProperty is not a function
+```
+The Object.hasOwn() method with the same behavior as calling Object.hasOwnProperty, takes our Object as the first argument and the property we want to check as the second:
+```javascript
+const object = { name: "Mark" };
+Object.hasOwn(object, "name"); // true
+
+const object2 = Object.create({ name: "Roman" });
+Object.hasOwn(object2, "name"); // false
+Object.hasOwn(object2.__proto__, "name"); // true
+
+const object3 = Object.create(null);
+Object.hasOwn(object3, "name"); // false
+```
