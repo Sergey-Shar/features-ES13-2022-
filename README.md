@@ -8,9 +8,9 @@ The at() method takes an integer value and returns the item at that index, allow
 
 The following "indexable" types have method .at():
 
-string
-Array
-All Typed Array classes: Uint8Array etc.
+-string
+-Array
+-All Typed Array classes: Uint8Array etc.
 
 
 ```javascript
