@@ -39,7 +39,7 @@ return 'hello ES13';
 
 static #PRIVATE_STATIC_FIELD = 22;
 
-static #privateStaticMethod (){
+static #privateStaticMethod(){
 return 'Hello ECMAScript 2022';
  };
 }
